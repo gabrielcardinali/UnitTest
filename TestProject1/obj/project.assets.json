@@ -638,7 +638,7 @@
           "lib/netstandard2.0/WebDriver.dll": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/91.0.4472.1900": {
+      "Selenium.WebDriver.ChromeDriver/91.0.4472.10100": {
         "type": "package",
         "build": {
           "build/Selenium.WebDriver.ChromeDriver.targets": {}
@@ -3165,10 +3165,10 @@
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/91.0.4472.1900": {
-      "sha512": "H8N5+WEr6o1pEcQpq8pODJwjMeWqxU3zvMZZLBTPjMBI+rJ51OPDeWHCdOLniXo4YrawrnvkHC7luwfMp64UpA==",
+    "Selenium.WebDriver.ChromeDriver/91.0.4472.10100": {
+      "sha512": "RalhItuJ6BZdD9HHVUHdpgDP/NQAUrr1yEAHWet+Ww33wbcuei0A2sF4+9duKaLQuZO3lcid7pKe2+km3sOGBQ==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/91.0.4472.1900",
+      "path": "selenium.webdriver.chromedriver/91.0.4472.10100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3179,7 +3179,7 @@
         "driver/mac64/chromedriver",
         "driver/win32/chromedriver.exe",
         "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.91.0.4472.1900.nupkg.sha512",
+        "selenium.webdriver.chromedriver.91.0.4472.10100.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
@@ -6697,7 +6697,7 @@
       "Microsoft.NET.Test.Sdk >= 16.10.0",
       "Selenium.Support >= 3.141.0",
       "Selenium.WebDriver >= 3.141.0",
-      "Selenium.WebDriver.ChromeDriver >= 91.0.4472.1900",
+      "Selenium.WebDriver.ChromeDriver >= 91.0.4472.10100",
       "coverlet.collector >= 3.0.3"
     ]
   },
@@ -6767,7 +6767,7 @@
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[91.0.4472.1900, )"
+            "version": "[91.0.4472.10100, )"
           },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -6791,7 +6791,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

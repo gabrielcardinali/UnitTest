@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dg0hcpZo/04YL7K4bu+AQqiHvmve05avaXqRIkVKzgaE4hkLg4zp9tSZdt6o/8idIU6c2Qcl393iKJv2piQKmA==",
+  "dgSpecHash": "DdCTn88hvMm2pQhJLZ9FzmGblcx9TA499uZMeLXs8/wxGAG2M+dy0WOG9rehyqAxehEg8r6Zho+tJBY9CQ5xYw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bieel\\Desktop\\UnitTest\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,7 @@
     "C:\\Users\\bieel\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\bieel\\.nuget\\packages\\selenium.support\\3.141.0\\selenium.support.3.141.0.nupkg.sha512",
     "C:\\Users\\bieel\\.nuget\\packages\\selenium.webdriver\\3.141.0\\selenium.webdriver.3.141.0.nupkg.sha512",
-    "C:\\Users\\bieel\\.nuget\\packages\\selenium.webdriver.chromedriver\\91.0.4472.1900\\selenium.webdriver.chromedriver.91.0.4472.1900.nupkg.sha512",
+    "C:\\Users\\bieel\\.nuget\\packages\\selenium.webdriver.chromedriver\\91.0.4472.10100\\selenium.webdriver.chromedriver.91.0.4472.10100.nupkg.sha512",
     "C:\\Users\\bieel\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\bieel\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\bieel\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

@@ -78,7 +78,7 @@ namespace SeleniumTests
             Screenshot screenshot = camera.GetScreenshot();
             string cas = DateTime.Now.ToString("dd_MM_yy_HH_mm_ss");
 
-            screenshot.SaveAsFile("C:/Users/bieel/Desktop/Gabriel/TestProject1/TestProject1/bin/Debug/net5.0/ScreenShotsNotFoundTest/" + cas + ".png");
+            screenshot.SaveAsFile("C:/Users/bieel/Desktop/UnitTest/TestProject1/bin/Debug/net5.0/ScreenShotsNotFoundTest" + cas + ".png");
         }
 
 
@@ -110,20 +110,13 @@ namespace SeleniumTests
             driver.FindElement(By.LinkText("5")).Click();
             driver.FindElement(By.LinkText("6")).Click();
             driver.FindElement(By.LinkText("7")).Click();
-            driver.FindElement(By.LinkText("Login")).Click();
-            driver.FindElement(By.Id("username")).Click();
-            driver.FindElement(By.Id("username")).Clear();
-            driver.FindElement(By.Id("username")).SendKeys("gabrielcardinali");
-            driver.FindElement(By.Id("page-top")).Click();
-            driver.FindElement(By.Id("password")).Clear();
-            driver.FindElement(By.Id("password")).SendKeys("123456");
-            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+
 
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot screenshot = camera.GetScreenshot();
             string cas = DateTime.Now.ToString("dd_MM_yy_HH_mm_ss");
 
-            screenshot.SaveAsFile("C:/Users/bieel/Desktop/Gabriel/TestProject1/TestProject1/bin/Debug/net5.0/ScreenShotsCategoryTest/" + cas + ".png");
+            screenshot.SaveAsFile("C:/Users/bieel/Desktop/UnitTest/TestProject1/bin/Debug/net5.0/ScreenShotsCategoryTest" + cas + ".png");
         }
 
         //Terceira parte

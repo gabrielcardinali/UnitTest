@@ -145,6 +145,7 @@ namespace SeleniumTests
             Assert.AreEqual(username.ToUpper(), loginText.Text);
         }
 
+
         public static bool IsElementPresent(By by)
         {
             try

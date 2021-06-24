@@ -103,6 +103,7 @@ namespace SeleniumTests
             new SelectElement(driver.FindElement(By.Id("type"))).SelectByText("Category");
             driver.FindElement(By.Id("type")).Click();
             driver.FindElement(By.XPath("//body[@id='page-top']/div/form/div/button")).Click();
+            
 
             Assert.IsNotNull(driver.FindElement(By.XPath("//*[@id='page-top']/div[2]/table/tbody/tr[25]")));
         }
@@ -117,25 +118,27 @@ namespace SeleniumTests
         //Ent�o ele deve ser redirecionado para a p�gina inicial logado
 
 
-        // [TestMethod]
-        // public void LoginTest()
-        // {
-        //    driver.FindElement(By.LinkText("BROWSE")).Click();
-        //    driver.FindElement(By.Id("B")).Clear();
-        //    driver.FindElement(By.LinkText("Login")).Click();
-        //    driver.FindElement(By.Id("username")).Clear();
-        //    driver.FindElement(By.Id("username")).SendKeys("");
-        //    driver.FindElement(By.Id("password")).Click();
-        //    driver.FindElement(By.Id("password")).Clear();
-        //    driver.FindElement(By.Id("password")).SendKeys("");
-        //    driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+        [TestMethod]
+        public void LoginTest()
+        {
+            string username = "gabrielcardinali";
+            string password = "123456";
 
-        //    ITakesScreenshot camera = driver as ITakesScreenshot;
-        //    Screenshot screenshot = camera.GetScreenshot();
-        //    string cas = DateTime.Now.ToString("dd_MM_yy_HH_mm_ss");
 
-        //    screenshot.SaveAsFile("C:/Users/bieel/Desktop/Gabriel/TestProject1/TestProject1/bin/Debug/net5.0/ScreenShotsLoginTest/" + cas + ".png");
-        // }
+            driver.FindElement(By.XPath("//a[@href='https://opentdb.com/login.php']")).Click();
+            driver.FindElement(By.Id("username")).Clear();
+            driver.FindElement(By.Id("username")).SendKeys(username);
+            driver.FindElement(By.Id("password")).Clear();
+            driver.FindElement(By.Id("password")).SendKeys(password);
+            driver.FindElement(By.Id("page-top")).Click();
+            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+            driver.FindElement(By.XPath("//body[@id='page-top']/section/div/div")).Click();
+
+            IWebElement loginText = driver.FindElement(By.XPath("//li[@class='menu-item dropdown']/a[@class='dropdown-toggle']"));
+           
+
+            Assert.AreEqual(username.ToUpper(), loginText.Text);
+        }
 
         private bool IsElementPresent(By by)
         {

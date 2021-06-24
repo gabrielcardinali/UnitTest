@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace SeleniumTests
 {
     [TestClass]
-    public class BookManyHealthcareAppointments
+    public class OpenTrivia
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -19,12 +19,10 @@ namespace SeleniumTests
         {
             var option = new ChromeOptions()
             {
-                BinaryLocation = @"C:\Program Files\Google\Chrome\Application\chrome.exe"
+                BinaryLocation = @"/opt/google/chrome/google-chrome"
             };
 
-            //option.AddArgument("--headdless");
             driver = new ChromeDriver(option);
-            //driver = new ChromeDriver();
         }
 
         [ClassCleanup]
@@ -56,16 +54,18 @@ namespace SeleniumTests
 
         //Primeira parte
 
-        //Funcionalidade: Busca no Banco de Questões
-        //Cenário: Busca por questão inexistente
-        //Dado que navego para a página de busca do banco de questões
+        //Funcionalidade: Busca no Banco de Questï¿½es
+        //Cenï¿½rio: Busca por questï¿½o inexistente
+        //Dado que navego para a pï¿½gina de busca do banco de questï¿½es
         //E digito 'Science: Computers' no campo de busca
-        //Quando clico no botão de buscar
-        //Então visualizo uma mensagem de erro com o texto 'No questions found.'
+        //Quando clico no botï¿½o de buscar
+        //Entï¿½o visualizo uma mensagem de erro com o texto 'No questions found.'
 
         [TestMethod]
         public void NoQuestionsFoundTest()
         {
+            string validationMessage = "No questions found.";
+
             driver.Navigate().GoToUrl("https://opentdb.com/");
             driver.FindElement(By.LinkText("BROWSE")).Click();
             driver.FindElement(By.XPath("//body[@id='page-top']/div[2]")).Click();
@@ -74,22 +74,21 @@ namespace SeleniumTests
             driver.FindElement(By.Id("query")).SendKeys("Science: Computers");
             driver.FindElement(By.XPath("//body[@id='page-top']/div/form/div/button")).Click();
 
-            ITakesScreenshot camera = driver as ITakesScreenshot;
-            Screenshot screenshot = camera.GetScreenshot();
-            string cas = DateTime.Now.ToString("dd_MM_yy_HH_mm_ss");
+            IWebElement returnMessage = driver.FindElement(By.XPath("//div[@class='alert alert-danger']"));
+         
+            Assert.AreEqual(validationMessage, returnMessage.Text);
 
-            screenshot.SaveAsFile("C:/Users/bieel/Desktop/UnitTest/TestProject1/bin/Debug/net5.0/ScreenShotsNotFoundTest" + cas + ".png");
         }
 
 
         //Segunda parte
 
-        //Funcionalidade: Busca no Banco de Questões
-        //Cenário: Busca por questão inexistente
-        //Dado que navego para a página de busca do banco de questões
+        //Funcionalidade: Busca no Banco de Questï¿½es
+        //Cenï¿½rio: Busca por questï¿½o inexistente
+        //Dado que navego para a pï¿½gina de busca do banco de questï¿½es
         //E digito 'Science: Computers' no campo de busca e seleciono Category
-        //Quando clico no botão de buscar
-        //Então visualizo a listagem de questões com 25 itens e o controle de paginação.'
+        //Quando clico no botï¿½o de buscar
+        //Entï¿½o visualizo a listagem de questï¿½es com 25 itens e o controle de paginaï¿½ï¿½o.'
 
         [TestMethod]
         public void CategoryTest()
@@ -104,34 +103,23 @@ namespace SeleniumTests
             new SelectElement(driver.FindElement(By.Id("type"))).SelectByText("Category");
             driver.FindElement(By.Id("type")).Click();
             driver.FindElement(By.XPath("//body[@id='page-top']/div/form/div/button")).Click();
-            driver.FindElement(By.LinkText("2")).Click();
-            driver.FindElement(By.LinkText("3")).Click();
-            driver.FindElement(By.LinkText("4")).Click();
-            driver.FindElement(By.LinkText("5")).Click();
-            driver.FindElement(By.LinkText("6")).Click();
-            driver.FindElement(By.LinkText("7")).Click();
 
-
-            ITakesScreenshot camera = driver as ITakesScreenshot;
-            Screenshot screenshot = camera.GetScreenshot();
-            string cas = DateTime.Now.ToString("dd_MM_yy_HH_mm_ss");
-
-            screenshot.SaveAsFile("C:/Users/bieel/Desktop/UnitTest/TestProject1/bin/Debug/net5.0/ScreenShotsCategoryTest" + cas + ".png");
+            Assert.IsNotNull(driver.FindElement(By.XPath("//*[@id='page-top']/div[2]/table/tbody/tr[25]")));
         }
 
         //Terceira parte
 
-        //Funcionalidade: login de usuário
-        //Cenário: Valida um usuário logado
-        //Dado que um usuário possua uma conta no sistema
-        //E tente acessar a página de login após a inserção de suas credenciais
-        //Quando ele aciona a opção de realizar login
-        //Então ele deve ser redirecionado para a página inicial logado
+        //Funcionalidade: login de usuï¿½rio
+        //Cenï¿½rio: Valida um usuï¿½rio logado
+        //Dado que um usuï¿½rio possua uma conta no sistema
+        //E tente acessar a pï¿½gina de login apï¿½s a inserï¿½ï¿½o de suas credenciais
+        //Quando ele aciona a opï¿½ï¿½o de realizar login
+        //Entï¿½o ele deve ser redirecionado para a pï¿½gina inicial logado
 
 
-        //[TestMethod]
-        //public void LoginTest()
-        //{
+        // [TestMethod]
+        // public void LoginTest()
+        // {
         //    driver.FindElement(By.LinkText("BROWSE")).Click();
         //    driver.FindElement(By.Id("B")).Clear();
         //    driver.FindElement(By.LinkText("Login")).Click();
@@ -147,7 +135,7 @@ namespace SeleniumTests
         //    string cas = DateTime.Now.ToString("dd_MM_yy_HH_mm_ss");
 
         //    screenshot.SaveAsFile("C:/Users/bieel/Desktop/Gabriel/TestProject1/TestProject1/bin/Debug/net5.0/ScreenShotsLoginTest/" + cas + ".png");
-        //}
+        // }
 
         private bool IsElementPresent(By by)
         {

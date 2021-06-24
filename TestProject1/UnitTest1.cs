@@ -17,6 +17,11 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
+            if (testContext is null)
+            {
+                throw new ArgumentNullException(nameof(testContext));
+            }
+
             var option = new ChromeOptions()
             {
                 BinaryLocation = @"/opt/google/chrome/google-chrome"
@@ -140,7 +145,7 @@ namespace SeleniumTests
             Assert.AreEqual(username.ToUpper(), loginText.Text);
         }
 
-        private bool IsElementPresent(By by)
+        public static bool IsElementPresent(By by)
         {
             try
             {
@@ -153,7 +158,7 @@ namespace SeleniumTests
             }
         }
 
-        private bool IsAlertPresent()
+        public static bool IsAlertPresent()
         {
             try
             {
@@ -166,7 +171,7 @@ namespace SeleniumTests
             }
         }
 
-        private string CloseAlertAndGetItsText()
+        public string CloseAlertAndGetItsText()
         {
             try
             {
